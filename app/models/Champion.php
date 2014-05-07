@@ -1,15 +1,11 @@
 <?php
 
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableInterface;
-
 class Champion extends Eloquent {
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
 	protected $table = 'champions';
+
+	public function skins(){
+		return $this->hasMany('Skin');
+	}
 
 }

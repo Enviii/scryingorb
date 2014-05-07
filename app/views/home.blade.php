@@ -4,15 +4,15 @@
     <div class="container" id="buttonWell">
 		<div id="headerButton" class="row">
 			<div id="headerButton" class="col-sm-6 col-md-4">
-				<button id="headerButton" class="btn btn-default btn-lg btn-block">Last Week</button>
+				<button id="headerButton1" class="btn btn-default btn-lg btn-block">Last Week</button>
 			</div>
 
 			<div id="headerButton" class="col-sm-6 col-md-4">
-				<button id="headerButton" class="btn btn-primary btn-lg btn-block">This Week</button>
+				<button id="headerButton2" class="btn btn-primary btn-lg btn-block">This Week</button>
 			</div>
 
 			<div id="headerButton" class="col-sm-6 col-md-4">
-				<button id="headerButton" class="btn btn-default btn-lg btn-block">Next Week</button>
+				<button id="headerButton3" class="btn btn-default btn-lg btn-block">Next Week</button>
 			</div>
 
 			<!-- <div id="headerButton" class="col-sm-6 col-md-3">
@@ -57,4 +57,14 @@
 		</div>
 	</div>
 
+@section('js')
+	<script>
+		$( document ).ready(function() {
+			// $("#headerButton1").click(function(){
+			// 	$.ajax({url:"demo_test.txt",success:function(result){
+			// 		$("#div1").html(result);
+			// 	}});
+			// });
+		});
+	</script>
 @stop

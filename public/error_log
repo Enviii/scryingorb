@@ -28,3 +28,9 @@
 [03-May-2014 18:09:54 UTC] PHP Fatal error:  Class 'ChampSales' not found in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 26
 [03-May-2014 18:09:54 UTC] PHP Fatal error:  Class 'ChampSales' not found in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 26
 [03-May-2014 18:31:54 UTC] PHP Fatal error:  Method name must be a string in /home/dkarkar/public_html/laravel/lolsales/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php on line 742
+[05-May-2014 01:53:59 UTC] PHP Fatal error:  Class 'ChampSales' not found in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 30
+[05-May-2014 01:55:01 UTC] PHP Fatal error:  Class 'ChampSales' not found in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 30
+[05-May-2014 02:07:27 UTC] PHP Parse error:  syntax error, unexpected 'Champion' (T_STRING) in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 41
+[05-May-2014 02:59:13 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dkarkar/public_html/laravel/lolsales/app/controllers/ChampionController.php on line 6
+[05-May-2014 03:05:56 UTC] PHP Parse error:  syntax error, unexpected '$posts' (T_VARIABLE), expecting '(' in /home/dkarkar/public_html/laravel/lolsales/app/controllers/ChampionController.php on line 17
+[05-May-2014 05:00:24 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 58

@@ -8,4 +8,8 @@ class SkinSales extends Eloquent {
 	 */
 	protected $table = 'skin_sales';
 
+	public function skin(){
+		return $this->belongsTo('Skin');
+	}
+
 }

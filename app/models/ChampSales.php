@@ -9,4 +9,5 @@ class ChampSales extends Eloquent {
 	 */
 	protected $table = 'champ_sales';
 
+
 }

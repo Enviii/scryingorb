@@ -34,6 +34,41 @@ class HomeController extends BaseController {
 		//$skin = Skin::find(1)->skin_set;
 		// echo $skin_set = Skin::find(1)->skin_set;
 		//echo '<pre>', print_r($skin), '</pre>';
+		// echo ChampSales::find(1)->champion;
+		// echo ChampSales::find(1)->ip;
+		// echo ChampSales::find(1)->champion_id;
+
+		// $champ = Champion::find(2);
+
+		// $skins = Champion::find(2)->skin;
+
+		// foreach ($skins as $value3) {
+		// 	echo $value3->skin."<br>";
+		// }
+
+		// $nurse = Skin::where('skin', '=', 'Nurse Akali')->first();
+
+		// foreach ($nurse->skinsales as $s2) {
+		// 	//echo $s2->image;
+		// 	echo "<br>";
+		// }
+
+		// foreach (Skin::with('champion')->get() as $s3)
+		// {
+		//     //echo "<pre>".$s3."</pre>";
+		//     //echo $s3->champion()->last_sale;
+		// }
+
+		//$skin = Skin::find(1);
+		//echo $skin->champion()->last_sale;
+		// if ($skin->champion()) {
+		// 	echo $skin->champion;
+		// }else {
+		// 	echo "false";
+		// }
+		//echo $skin;
+
+
 
 		return View::make('home')->with('champ_sales', $champ_sales)->with('skin_sales', $skin_sales);
 	}

@@ -1,4 +1,4 @@
-@extends('layout.sub')
+@extends('layout.main')
 
 @section('content')
 	@foreach($champions as $value)

@@ -3,7 +3,23 @@
 class ChampionController extends BaseController {
 
 	public function getChampions() {
-		$champions = Champion::get();
+		//$champions = Champion::get();
+		$champions = Champion::with('skins')->get();
+
+		$champ_id=Champion::find(3)->skin;
+		//$champ = Champion::find(2);
+		$champ = Champion::find(2);
+
+	// foreach ($champ->skin as $c) {
+	// 	echo $c->set."<br>";
+	// }
+
+	// $skin = Skin::all();
+	// foreach ($skin as $s) {
+	// 	echo $s->champion->champion;
+	// 	echo $s->champion;
+	// }
+
 		return View::make('champions.champions')->with('champions', $champions);
 	}
 

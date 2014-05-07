@@ -10,7 +10,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/bootstrap-darkly.min.css">
+        <!-- <link rel="stylesheet" href="css/bootstrap-darkly.min.css"> -->
+        {{ HTML::style('css/bootstrap-darkly.min.css') }}
         <style>
             body {
                 padding-top: 70px;
@@ -18,9 +19,9 @@
             }
         </style>
         <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
-        <link rel="stylesheet" href="css/main.css">
-
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <!-- <link rel="stylesheet" href="css/main.css"> -->
+        {{ HTML::style('css/main.css') }}
+        {{ HTML::script('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}
     </head>
 	<body>
 		@include('layout.navigation')
@@ -36,12 +37,9 @@
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/main.js"></script> 
-        <script>
-            $( document ).ready(function() {
-          
-            });
-        </script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <!-- <script src="js/main.js"></script> -->
+        {{ HTML::script('js/main.js') }}
+        @yield('js')
 	</body>
 </html>

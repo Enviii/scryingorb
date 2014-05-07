@@ -7,7 +7,15 @@ class SkinController extends BaseController {
 		//echo $skin_set = Skin::find(1)->skin_set;
 		//echo $skin_set = Skin::find(1)->skin_set;
 
-		$skins = Skin::get();
+		$skins = Skin::all();
+
+		$skin = Skin::all();
+		foreach ($skin as $s) {
+
+		    //echo $s->champion()->first()->champion; // $s->champion is a field on skins table    
+		    //echo "<br>";
+		    //echo $s->champion; // outputs this field value
+		}
 
 		// foreach ($skins as $skin)
 		// {
