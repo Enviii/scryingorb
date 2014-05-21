@@ -34,3 +34,41 @@
 [05-May-2014 02:59:13 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/dkarkar/public_html/laravel/lolsales/app/controllers/ChampionController.php on line 6
 [05-May-2014 03:05:56 UTC] PHP Parse error:  syntax error, unexpected '$posts' (T_VARIABLE), expecting '(' in /home/dkarkar/public_html/laravel/lolsales/app/controllers/ChampionController.php on line 17
 [05-May-2014 05:00:24 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 58
+[09-May-2014 23:28:35 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 53
+[09-May-2014 23:29:38 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 53
+[10-May-2014 22:13:28 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/607894ba79849b2d5a37d6a07a465905 on line 36
+[10-May-2014 23:38:59 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 39
+[11-May-2014 06:03:09 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 21
+[19-May-2014 23:41:06 UTC] PHP Parse error:  syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 23
+[20-May-2014 20:56:36 America/New_York] PHP Parse error:  syntax error, unexpected '$value' (T_VARIABLE) in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/607894ba79849b2d5a37d6a07a465905 on line 5
+[20-May-2014 21:06:57 America/New_York] PHP Parse error:  syntax error, unexpected ';' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/607894ba79849b2d5a37d6a07a465905 on line 11
+[20-May-2014 23:22:59 America/New_York] PHP Fatal error:  Class 'Champions' not found in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 44
+[21-May-2014 03:37:26 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 59
+[21-May-2014 03:37:28 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 59
+[21-May-2014 03:37:40 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 79
+[21-May-2014 03:37:41 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HomeController.php on line 79
+[21-May-2014 00:16:32 America/New_York] PHP Parse error:  syntax error, unexpected ';' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/1f9d9bc9b04a1f8b41a0b60189a6ae6a on line 110
+[21-May-2014 00:26:37 America/New_York] PHP Parse error:  syntax error, unexpected ';' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/1f9d9bc9b04a1f8b41a0b60189a6ae6a on line 111
+[21-May-2014 00:27:08 America/New_York] PHP Parse error:  syntax error, unexpected ';' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/1f9d9bc9b04a1f8b41a0b60189a6ae6a on line 111
+[21-May-2014 00:27:48 America/New_York] PHP Parse error:  syntax error, unexpected 'champion' (T_STRING), expecting ',' or ';' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/1f9d9bc9b04a1f8b41a0b60189a6ae6a on line 111
+[21-May-2014 00:27:50 America/New_York] PHP Parse error:  syntax error, unexpected 'champion' (T_STRING), expecting ',' or ';' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/1f9d9bc9b04a1f8b41a0b60189a6ae6a on line 111
+[21-May-2014 00:49:17 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: lastSaleEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:72
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(72): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 72, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appli in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 72
+[21-May-2014 00:49:17 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 72
+[21-May-2014 00:49:48 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: lastSaleEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:72
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(72): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 72, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appli in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 72
+[21-May-2014 00:49:48 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 72

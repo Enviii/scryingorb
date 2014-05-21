@@ -9,5 +9,8 @@ class ChampSales extends Eloquent {
 	 */
 	protected $table = 'champ_sales';
 
+	public function champ(){
+		return $this->belongsTo('Champion', 'champion_id', 'id');
+	}
 
 }

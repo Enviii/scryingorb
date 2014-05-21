@@ -15,62 +15,76 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	// public function showWelcome()
-	// {
-	// 	return View::make('hello');
-	// }
-
 	public function home() {
+		date_default_timezone_set('America/New_York');
 
-		//$skins=Skin::get();
-		//$champ_sales=ChampSales::get();
+/*		$today = new DateTime("now");
+		$today = $today->format("Y-m-d");*/
 
+		//$testing ="test";
 
+/*		$champ_sales2 = Champion::with('championOnSale')->get();
 
-		$champ_sales = ChampSales::orderBy('start_date', 'desc')->take(3)->get();
-		$skin_sales=SkinSales::orderBy('start_date', 'desc')->take(3)->get();
-		//$champ_sales=ChampSales::where("start_date", '=', "2014-05-02")->get();
-		//$skin_sales=SkinSales::where("start_date", "=", "2014-05-02")->get();
-		//$skin = Skin::find(1)->skin_set;
-		// echo $skin_set = Skin::find(1)->skin_set;
-		//echo '<pre>', print_r($skin), '</pre>';
-		// echo ChampSales::find(1)->champion;
-		// echo ChampSales::find(1)->ip;
-		// echo ChampSales::find(1)->champion_id;
+		foreach ($champ_sales2 as $key => $value) {
+			//echo $value->champion;
+			foreach ($value->championOnSale as $value2) {
+				//echo " - ".$value2->start_date;
+			}
+			//echo "<br>";
+		}*/
 
-		// $champ = Champion::find(2);
-
-		// $skins = Champion::find(2)->skin;
-
-		// foreach ($skins as $value3) {
-		// 	echo $value3->skin."<br>";
-		// }
-
-		// $nurse = Skin::where('skin', '=', 'Nurse Akali')->first();
-
-		// foreach ($nurse->skinsales as $s2) {
-		// 	//echo $s2->image;
-		// 	echo "<br>";
-		// }
-
-		// foreach (Skin::with('champion')->get() as $s3)
-		// {
-		//     //echo "<pre>".$s3."</pre>";
-		//     //echo $s3->champion()->last_sale;
-		// }
-
-		//$skin = Skin::find(1);
-		//echo $skin->champion()->last_sale;
-		// if ($skin->champion()) {
-		// 	echo $skin->champion;
-		// }else {
-		// 	echo "false";
-		// }
-		//echo $skin;
+		//$champsales = ChampSales::find(2);
+		//echo "somewhere ".$champsales->champ->last_sale;
 
 
+		$champ_sales = ChampSales::whereRaw('CURDATE() between start_date and end_date')->take(3)->get();
+		$skin_sales = SkinSales::whereRaw('CURDATE() between start_date and end_date')->take(3)->get();
 
-		return View::make('home')->with('champ_sales', $champ_sales)->with('skin_sales', $skin_sales);
+
+		$champions=Champion::all();
+		$skins=Skin::all();
+
+		$championArray=array();
+		$skinArray=array();
+
+		foreach ($champions as $key => $value) {
+			//echo $value->champion."<br>";
+			$championArray[]=$value->champion;
+		}
+
+		foreach ($skins as $key => $value) {
+			$skinArray[]=$value->skin;
+		}
+
+		//echo "<pre>";
+		//print_r($championArray);
+		//echo "</pre>";
+
+		$json = json_encode($championArray);
+		$json2 = json_encode($skinArray);
+		//$json = str_replace('"', '', $json);
+
+		//echo $json;
+
+
+		//$skinsales=SkinSales::find(2);
+
+		//echo $skinsales->skinBelongsTo->date_last_sale;
+
+		//echo $result;
+
+		//$champ_sales = ChampSales::orderBy('start_date', 'desc')->take(3)->get();
+		//$skin_sales=SkinSales::orderBy('start_date', 'desc')->take(3)->get();
+
+/*		foreach (ChampSales::all() as $book)
+		{
+		    //echo $book->champ->champion;
+		    echo $book->start_date;
+		    echo "<br>";
+
+		}*/
+
+		return View::make('home')->with('champ_sales', $champ_sales)->with('skin_sales', $skin_sales)->with('champions',$json)->with('skins',$json2);
 	}
 
 }

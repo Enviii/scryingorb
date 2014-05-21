@@ -17,8 +17,8 @@
 				<li><a href="#salehistory">Sale History</a></li>
 				<li><a href="#predictionhistory">Prediction History</a></li>
 			</ul>
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control col-lg-8" placeholder="Champs/Skins">
+			<form class="navbar-form navbar-right" id="the-basics">
+				<input type="text" class="form-control col-lg-8 typeahead" placeholder="Champs/Skins">
 			</form>
 		</div><!--/.navbar-collapse -->
 	</div>

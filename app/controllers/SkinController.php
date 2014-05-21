@@ -4,24 +4,12 @@ class SkinController extends BaseController {
 
 	public function getSkins() {
 
-		//echo $skin_set = Skin::find(1)->skin_set;
-		//echo $skin_set = Skin::find(1)->skin_set;
-
 		$skins = Skin::all();
 
 		$skin = Skin::all();
 		foreach ($skin as $s) {
 
-		    //echo $s->champion()->first()->champion; // $s->champion is a field on skins table    
-		    //echo "<br>";
-		    //echo $s->champion; // outputs this field value
 		}
-
-		// foreach ($skins as $skin)
-		// {
-		//     echo $skin->id." ".$skin->set." ".$skin->champion;
-		//     echo "<br>";
-		// }
 		return View::make('skins.skins')->with('skins', $skins);
 	}
 
@@ -33,12 +21,6 @@ class SkinController extends BaseController {
 			$column='skin';
 			$skins=Skin::where("skin", '=', $id)->get();
 		}
-
-		// return View::make('skins.single')->with('skin',$skinModel);
-		//$skins=Skin::where("date_last_sale", '=', "2014-05-02")->get();
-		//$skin = Skin::find(1)->skin_set;
-		// echo $skin_set = Skin::find(1)->skin_set;
-		//echo '<pre>', print_r($skin), '</pre>';
 
 		return View::make('skins.single')->with('skins', $skins);
 	}
