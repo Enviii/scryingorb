@@ -40,6 +40,11 @@ Route::get('/champion/{name}', array(
 	'uses' => 'ChampionController@showChampion'
 ));
 
+Route::get('/history', array(
+	'as' => 'history',
+	'uses' => 'HistoryController@showHistory'
+));
+
 Route::get('users', function()
 {
 	$users = DB::table('skin_sales')->get();
@@ -51,71 +56,102 @@ Route::get('users', function()
 });
 
 Route::get('/header1', function(){
-	date_default_timezone_set('America/New_York');
-/*	$startDate = ChampSales::orderBy('start_date', 'desc')->take(1)->get();
-	foreach ($startDate as $value) {
-		$endDate = $value->start_date;
-		$date = new DateTime($endDate);
-		$date->sub(new DateInterval('P1D'));
-		//$date->sub(new DateInterval('P1D'));
-		$endDate = $date->format("Y-m-d");
-	}*/
-	//echo $endDate;
+	
 
-	$lastInsertEndDate = ChampSales::orderBy('end_date', 'desc')->first();
-	//echo $lastInsertEndDate->end_date;
+/*	$lastInsertEndDate = ChampSales::orderBy('end_date', 'desc')->first();
 
-	$latestEndDate = new DateTime($lastInsertEndDate->end_date);
-
+	$latestEndDate = new DateTime($lastInsertEndDate->end_date);*/
 
 	$today = new DateTime("now");
-	$weekday=$latestEndDate->format("l");
+	$latestEndDate=new DateTime("now");
+	$weekday=$today->format("l");
+	$hour = $today->format("Y-m-d H:i:s");
+	//echo $hour;
 
-	if ($weekday=="Monday") {
+	if ($weekday=="Sunday") {
+		$latestEndDate->sub(new DateInterval("P2D"));
+		//echo "hello sunday";
+	} elseif ($weekday=="Monday") {
 		$latestEndDate->sub(new DateInterval("P3D"));
-	} else {
-		$latestEndDate->sub(new DateInterval("P4D"));
+		//echo "hello monday";
+	} elseif ($weekday=="Tuesday") {
+		$latestEndDate=new DateTime("now");
+		//echo "hello tuesday";
+	} elseif ($weekday=="Wednesday") {
+		$latestEndDate->sub(new DateInterval("P1D"));
+		//echo "hello Wednesday";
+	} elseif ($weekday=="Thursday") {
+		$latestEndDate->sub(new DateInterval("P2D"));
+		//echo "hello Thursday";
+	} elseif ($weekday=="Friday") {
+		$latestEndDate=new DateTime("now");
+		//echo "hello friday";
+	} elseif ($weekday=="Saturday") {
+		$latestEndDate->sub(new DateInterval("P1D"));
+		//echo "hello Saturday";
 	}
 
-
-
 	$lastSaleEndDate = $latestEndDate->format("Y-m-d");
-	//echo $lastSaleEndDate;
 
-
+	//echo $lastSaleEndDate." yolo";
 
 	if (Request::ajax()) {
 
-		/*$champ_sales = ChampSales::whereRaw($today.' between start_date and end_date')->take(3)->get();
-		$skin_sales = SkinSales::whereRaw($today.' between start_date and end_date')->take(3)->get();*/
+/*		$champ_sales = ChampSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "asc")->take(3)->get();
+		$skin_sales = SkinSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "asc")->take(3)->get();*/
+		$champ_sales = ChampSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
+		$skin_sales = SkinSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
 
-		$champ_sales = ChampSales::where('end_date', '=', $lastSaleEndDate)->take(3)->get();
-		$skin_sales = SkinSales::where('end_date', '=', $lastSaleEndDate)->take(3)->get();
-
-		//$champ_sales = ChampSales::where('end_date', '=', $endDate)->take(3)->get();
-		//$skin_sales = SkinSales::where('end_date', '=', $endDate)->take(3)->get();
 		return View::make('saleContent')->with('champ_sales', $champ_sales)->with('skin_sales', $skin_sales);
 	}
 });
 
 Route::get('/header2', function(){
-	date_default_timezone_set('America/New_York');
+	
+	$today = new DateTime("now");
+	$latestEndDate=new DateTime("now");
+	$weekday=$today->format("l");
+	//echo $weekday;
+
+	if ($weekday=="Sunday") {
+		$latestEndDate->sub(new DateInterval("P2D"));
+		//echo "hello sunday";
+	} elseif ($weekday=="Monday") {
+		$latestEndDate->sub(new DateInterval("P3D"));
+		//echo "hello monday";
+	} elseif ($weekday=="Tuesday") {
+		$latestEndDate=new DateTime("now");
+		//echo "hello tuesday";
+	} elseif ($weekday=="Wednesday") {
+		$latestEndDate->sub(new DateInterval("P1D"));
+		//echo "hello Wednesday";
+	} elseif ($weekday=="Thursday") {
+		$latestEndDate->sub(new DateInterval("P2D"));
+		//echo "hello Thursday";
+	} elseif ($weekday=="Friday") {
+		$latestEndDate=new DateTime("now");
+		//echo "hello friday";
+	} elseif ($weekday=="Saturday") {
+		$latestEndDate->sub(new DateInterval("P1D"));
+		//echo "hello Saturday";
+	}
+
+	$lastSaleEndDate = $latestEndDate->format("Y-m-d");
+
 	if (Request::ajax()) {
 
-		$champ_sales = ChampSales::whereRaw('CURDATE() between start_date and end_date')->take(3)->get();
-		$skin_sales = SkinSales::whereRaw('CURDATE() between start_date and end_date')->take(3)->get();
+		$champ_sales = ChampSales::where('start_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
+		$skin_sales = SkinSales::where('start_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
 
-/*		$champ_sales = ChampSales::orderBy('start_date', 'desc')->take(3)->get();
-		$skin_sales=SkinSales::orderBy('start_date', 'desc')->take(3)->get();*/
 		return View::make('saleContent')->with('champ_sales', $champ_sales)->with('skin_sales', $skin_sales);
 	}
 });
 
 Route::get('/header3', function(){
-	date_default_timezone_set('America/New_York');
-
+	
 	$today = new DateTime("now");
 	$weekday=$today->format("l");
+
 
 	if ($weekday=="Thursday") {
 		$today->add(new DateInterval("P1D"));
@@ -125,16 +161,13 @@ Route::get('/header3', function(){
 
 	$nextSaleEndDate = $today->format("Y-m-d");
 
-	echo $nextSaleEndDate;
-
+	//echo $nextSaleEndDate;
 
 	if (Request::ajax()) {
 
-		$champ_sales = ChampSales::where('start_date', '=', $nextSaleEndDate)->take(3)->get();
-		$skin_sales = SkinSales::where('start_date', '=', $nextSaleEndDate)->take(3)->get();
+		$champ_sales = ChampSales::where('start_date', '=', $nextSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
+		$skin_sales = SkinSales::where('start_date', '=', $nextSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
 
-/*		$champ_sales = ChampSales::orderBy('start_date', 'desc')->take(3)->get();
-		$skin_sales=SkinSales::orderBy('start_date', 'desc')->take(3)->get();*/
 		return View::make('saleContent')->with('champ_sales', $champ_sales)->with('skin_sales', $skin_sales);
 	}
 });

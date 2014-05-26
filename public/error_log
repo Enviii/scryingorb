@@ -72,3 +72,191 @@ Stack trace:
 #5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
 #6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appli in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 72
 [21-May-2014 00:49:48 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 72
+[24-May-2014 00:14:05 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:05 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:07 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:07 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:07 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:07 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:08 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:08 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:09 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:09 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:11 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:14:11 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:44:01 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:44:01 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:44:04 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:44:04 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:44:04 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:44:04 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:02 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 132
+[24-May-2014 00:45:02 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 132
+[24-May-2014 00:45:03 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 132
+[24-May-2014 00:45:33 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:33 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:34 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:34 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:35 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:35 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:35 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:35 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:36 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:36 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:37 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: latestEndDate' in /home/dkarkar/public_html/laravel/lolsales/app/routes.php:130
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/routes.php(130): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 130, Array)
+#1 [internal function]: {closure}()
+#2 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4940): call_user_func_array(Object(Closure), Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4655): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(4643): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(698): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(679): Illuminate\Foundation\Appl in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 00:45:37 America/New_York] PHP Fatal error:  Call to a member function sub() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/routes.php on line 130
+[24-May-2014 17:11:59 America/New_York] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 63
+[24-May-2014 17:38:01 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 138
+[24-May-2014 17:39:14 America/New_York] PHP Parse error:  syntax error, unexpected '$skin' (T_VARIABLE) in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 78
+[24-May-2014 17:39:29 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 138
+[24-May-2014 17:39:33 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 138
+[24-May-2014 17:40:23 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 78
+[24-May-2014 17:40:38 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 138
+[24-May-2014 17:40:39 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 138
+[24-May-2014 17:40:41 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 138
+[24-May-2014 17:41:19 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 138
+[24-May-2014 17:43:19 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 139
+[24-May-2014 17:43:20 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 139
+[24-May-2014 17:44:04 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 133
+[24-May-2014 17:44:05 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 133
+[24-May-2014 17:44:06 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 133
+[24-May-2014 17:44:26 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 139
+[24-May-2014 17:44:27 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 139
+[25-May-2014 17:15:03 America/New_York] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HistoryController.php on line 17
+[25-May-2014 17:39:41 America/New_York] PHP Parse error:  syntax error, unexpected ';' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 50
+[25-May-2014 18:06:10 America/New_York] PHP Parse error:  syntax error, unexpected ':' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 41
+[25-May-2014 18:21:26 America/New_York] PHP Fatal error:  Call to a member function get() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HistoryController.php on line 7
+[25-May-2014 18:27:30 America/New_York] PHP Fatal error:  Call to a member function orderBy() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HistoryController.php on line 9
+[25-May-2014 18:33:22 America/New_York] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH), expecting ';' in /home/dkarkar/public_html/laravel/lolsales/app/controllers/HistoryController.php on line 17
+[25-May-2014 18:45:13 America/New_York] PHP Fatal error:  Call to a member function diff() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 86
+[25-May-2014 22:37:16 America/New_York] PHP Fatal error:  Call to undefined function clean() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 71
+[25-May-2014 22:37:18 America/New_York] PHP Fatal error:  Call to undefined function clean() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 71
+[25-May-2014 22:37:19 America/New_York] PHP Fatal error:  Call to undefined function clean() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 71
+[25-May-2014 22:37:29 America/New_York] PHP Fatal error:  Call to undefined function clean() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 71
+[25-May-2014 22:37:30 America/New_York] PHP Fatal error:  Call to undefined function clean() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 71
+[25-May-2014 22:37:31 America/New_York] PHP Fatal error:  Call to undefined function clean() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 71
+[25-May-2014 22:37:50 America/New_York] PHP Fatal error:  Call to undefined function clean() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 71
+[25-May-2014 22:38:36 America/New_York] PHP Fatal error:  Call to undefined function clean() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 71
+[25-May-2014 22:48:39 America/New_York] PHP Parse error:  syntax error, unexpected 'orderBy' (T_STRING) in /home/dkarkar/public_html/laravel/lolsales/app/controllers/ChampionController.php on line 6
+[25-May-2014 23:28:28 America/New_York] PHP Fatal error:  Cannot redeclare clean() (previously declared in /home/dkarkar/public_html/laravel/lolsales/app/controllers/BaseController.php:10) in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 9
+[25-May-2014 23:28:37 America/New_York] PHP Fatal error:  Cannot redeclare clean() (previously declared in /home/dkarkar/public_html/laravel/lolsales/app/controllers/BaseController.php:10) in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 9

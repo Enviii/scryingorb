@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-default navbar-static-top">
 	<!-- navbar-collapse collapse navbar-inverse-collapse -->
 	<div class="container">
 		<div class="navbar-header">
@@ -14,7 +14,7 @@
 				<li><a href="{{ URL::route('home') }}">Home</a></li>
 				<li><a href="{{ URL::route('skin') }}">Skins</a></li>
 				<li><a href="{{ URL::route('champion') }}">Champions</a></li>
-				<li><a href="#salehistory">Sale History</a></li>
+				<li><a href="{{ URL::route('history') }}">Sale History</a></li>
 				<li><a href="#predictionhistory">Prediction History</a></li>
 			</ul>
 			<form class="navbar-form navbar-right" id="the-basics">

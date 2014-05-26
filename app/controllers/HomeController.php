@@ -16,39 +16,14 @@ class HomeController extends BaseController {
 	*/
 
 	public function home() {
-		date_default_timezone_set('America/New_York');
 
-/*		$today = new DateTime("now");
-		$today = $today->format("Y-m-d");*/
-
-		//$testing ="test";
-
-/*		$champ_sales2 = Champion::with('championOnSale')->get();
-
-		foreach ($champ_sales2 as $key => $value) {
-			//echo $value->champion;
-			foreach ($value->championOnSale as $value2) {
-				//echo " - ".$value2->start_date;
-			}
-			//echo "<br>";
-		}*/
-
-		//$champsales = ChampSales::find(2);
-		//echo "somewhere ".$champsales->champ->last_sale;
-
-
-		$champ_sales = ChampSales::whereRaw('CURDATE() between start_date and end_date')->take(3)->get();
-		$skin_sales = SkinSales::whereRaw('CURDATE() between start_date and end_date')->take(3)->get();
-
-
-		$champions=Champion::all();
+/*		$champions=Champion::all();
 		$skins=Skin::all();
 
 		$championArray=array();
 		$skinArray=array();
 
 		foreach ($champions as $key => $value) {
-			//echo $value->champion."<br>";
 			$championArray[]=$value->champion;
 		}
 
@@ -56,35 +31,52 @@ class HomeController extends BaseController {
 			$skinArray[]=$value->skin;
 		}
 
-		//echo "<pre>";
-		//print_r($championArray);
-		//echo "</pre>";
-
 		$json = json_encode($championArray);
 		$json2 = json_encode($skinArray);
-		//$json = str_replace('"', '', $json);
 
-		//echo $json;
+		echo $json."<br><br>";
+		echo $json2."<br><br>";*/
 
+		$today = new DateTime("now");
+		$latestEndDate=new DateTime("now");
+		$weekday=$today->format("l");
+		//echo $weekday;
 
-		//$skinsales=SkinSales::find(2);
+		if ($weekday=="Sunday") {
+			$latestEndDate->sub(new DateInterval("P2D"));
+			//echo "hello sunday";
+		} elseif ($weekday=="Monday") {
+			$latestEndDate->sub(new DateInterval("P3D"));
+			//echo "hello monday";
+		} elseif ($weekday=="Tuesday") {
+			$latestEndDate=new DateTime("now");
+			//echo "hello tuesday";
+		} elseif ($weekday=="Wednesday") {
+			$latestEndDate->sub(new DateInterval("P1D"));
+			//echo "hello Wednesday";
+		} elseif ($weekday=="Thursday") {
+			$latestEndDate->sub(new DateInterval("P2D"));
+			//echo "hello Thursday";
+		} elseif ($weekday=="Friday") {
+			$latestEndDate=new DateTime("now");
+			//echo "hello friday";
+		} elseif ($weekday=="Saturday") {
+			$latestEndDate->sub(new DateInterval("P1D"));
+			//echo "hello Saturday";
+		}
 
-		//echo $skinsales->skinBelongsTo->date_last_sale;
+		$lastSaleEndDate = $latestEndDate->format("Y-m-d");
 
-		//echo $result;
+		$champ_sales = ChampSales::where('start_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
+		$skin_sales = SkinSales::where('start_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
 
-		//$champ_sales = ChampSales::orderBy('start_date', 'desc')->take(3)->get();
-		//$skin_sales=SkinSales::orderBy('start_date', 'desc')->take(3)->get();
+		$old_champ_sale = ChampSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
+		$old_skin_sale = SkinSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
 
-/*		foreach (ChampSales::all() as $book)
-		{
-		    //echo $book->champ->champion;
-		    echo $book->start_date;
-		    echo "<br>";
+		/*$champ_sales = ChampSales::whereRaw('CURDATE() between start_date and end_date')->orderBy("sale_price", "asc")->take(3)->get();
+		$skin_sales = SkinSales::whereRaw('CURDATE() between start_date and end_date')->orderBy("sale_price", "asc")->take(3)->get();*/
 
-		}*/
-
-		return View::make('home')->with('champ_sales', $champ_sales)->with('skin_sales', $skin_sales)->with('champions',$json)->with('skins',$json2);
+		return View::make('home')->with('champ_sales', $champ_sales)->with('skin_sales', $skin_sales)->with('old_skin_sale', $old_skin_sale)->with('old_champ_sale', $old_champ_sale);
 	}
 
 }

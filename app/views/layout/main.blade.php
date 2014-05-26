@@ -9,75 +9,104 @@
         <title>Scrying Orb</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google" value="notranslate" />
+        <!-- <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-darkly.min.css') }}"> -->
+        <link rel="stylesheet" href="http://bootswatch.com/darkly/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset('css/typeahead.css') }}">
+        <script src="{{ URL::asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
 
-        <!-- <link rel="stylesheet" href="css/bootstrap-darkly.min.css"> -->
-        {{ HTML::style('css/bootstrap-darkly.min.css') }}
         <style>
             body {
-                padding-top: 70px;
+                /* padding-top: 70px; */
                 padding-bottom: 20px;
             }
-.tt-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  float: left;
-  min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0;
-  list-style: none;
-  font-size: 14px;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  background-clip: padding-box;
-}
-.tt-suggestion > p {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-weight: normal;
-  line-height: 1.428571429;
-  color: #333333;
-  white-space: nowrap;
-}
-.tt-suggestion > p:hover,
-.tt-suggestion > p:focus,
-.tt-suggestion.tt-cursor p {
-  color: #ffffff;
-  text-decoration: none;
-  outline: 0;
-  background-color: #428bca;
-}
 
+            .carousel-control {
+                width: 25%;
+            }
         </style>
-        <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
-        <!-- <link rel="stylesheet" href="css/main.css"> -->
-        {{ HTML::style('css/main.css') }}
-        {{ HTML::script('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}
     </head>
 	<body>
 		@include('layout.navigation')
+
 		@yield('content')
 
         <div class="container" id="footer">
             <div class="row text-center">
                 <hr>
                 <footer>
-                    <p>&copy; Scrying Orb 2014</p>
+                    <br>
+                    <div class="col-md-8 col-md-offset-2">
+                        <p><small>Scrying Orb isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</small></p>
+                    </div>
                 </footer>
             </div>
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-        <!-- <script src="js/main.js"></script> -->
-        {{ HTML::script('js/main.js') }}
-        {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.2/typeahead.bundle.min.js')}}
+        <script src="{{ URL::asset('js/main.js') }}"></script>
+        <script src="{{ URL::asset('js/vendor/typeahead.min.js') }}"></script>
         @yield('js')
+        <script>
+            $( document ).ready(function() {
+
+                var substringMatcher = function(strs) {
+                  return function findMatches(q, cb) {
+                    var matches, substringRegex;
+                 
+                    // an array that will be populated with substring matches
+                    matches = [];
+                 
+                    // regex used to determine if a string contains the substring `q`
+                    substrRegex = new RegExp(q, 'i');
+                 
+                    // iterate through the pool of strings and for any string that
+                    // contains the substring `q`, add it to the `matches` array
+                    $.each(strs, function(i, str) {
+                      if (substrRegex.test(str)) {
+                        // the typeahead jQuery plugin expects suggestions to a
+                        // JavaScript object, refer to typeahead docs for more info
+                        matches.push({ value: str });
+                      }
+                    });
+                 
+                    cb(matches);
+                  };
+                };
+
+                var champions = {{$championsArray}};
+                var skins = {{$skinsArray}};
+                 
+                $('#the-basics .typeahead').typeahead({
+                    hint: true,
+                    highlight: true,
+                    minLength: 1
+                }, {
+                    name: 'champion',
+                    displayKey: 'value',
+                    source: substringMatcher(champions)
+                }, {
+                    name: 'skin',
+                    displayKey: 'value',
+                    source: substringMatcher(skins)
+                }
+                );
+
+                $('.typeahead').bind('typeahead:selected', function(obj, datum, name) {      
+                    if (name=="skin") {
+                        urlTo = "{{ URL::to('skin', 'here') }}";
+                        urlTo = urlTo.replace('here', datum.value);
+
+                        window.location=urlTo;
+                    } else {
+                        urlTo = "{{ URL::to('champion', 'here') }}";
+                        urlTo = urlTo.replace('here', datum.value);
+
+                        window.location=urlTo;
+                    }
+                });
+            });
+        </script>
 	</body>
 </html>
