@@ -27,9 +27,11 @@ $divCount=0;
 
 				<div class="col-md-3 col-sm-4 col-xs-6">
 
+				  
+
 					<div class="thumbnail" id="championPage">
 					<?php $cleanChamp = clean($champion->champion); ?>
-						<a href="{{ URL::to('champion', $champion->champion) }}"><img data-src="holder.js/300x200" src="/img/all/{{$cleanChamp}}_Square_Classic.png" alt="{{$champion->champion}}"></a>
+						<a href="{{ URL::to('champion', $champion->champion) }}"><img data-src="holder.js/300x200" src="{{ asset('img/all/'.$cleanChamp.'_Square_Classic.png') }}" alt="{{$champion->champion}}"></a>
 						<div class="caption text-center">
 							<a href="{{ URL::to('champion', $champion->champion) }}">
 								<h3 class="text-success"><strong>{{$champion->champion}}</strong></h3>
