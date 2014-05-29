@@ -1,12 +1,23 @@
 		<div class="container" id="champs">
 			<div class="row">
 				@foreach($champ_sales as $champion)
+				<?php $cleanChamp = str_replace(" ","",$champion->champion); ?>
 
-					<div class="col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-4 col-xs-4">
 						<div class="thumbnail">
-							<a href="{{ URL::to('champion', $champion->champion) }}">
-								<img src="{{$champion->image}}" alt="{{$champion->champion}}">
-							</a>
+							<span class="hidden-xs">
+								<a href="{{ URL::to('champion', $champion->champion) }}">
+									<img src="{{$champion->image}}" alt="{{$champion->champion}}">
+								</a>
+							</span>
+							
+							
+							<span class="visible-xs">
+								<a href="{{ URL::to('champion', $champion->champion) }}">
+									<img src="/img/all/{{$cleanChamp}}_Square_Classic.png" alt="{{$champion->champion}}">
+								</a>
+							</span>
+							
 							<div class="caption text-center">
 								<a href="{{ URL::to('champion', $champion->champion) }}">
 									<h4 class="text-success">

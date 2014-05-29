@@ -45,6 +45,11 @@ Route::get('/history', array(
 	'uses' => 'HistoryController@showHistory'
 ));
 
+Route::get('/skinhistory', array(
+	'as' => 'skinhistory',
+	'uses' => 'SkinHistoryController@showSkinHistory'
+));
+
 Route::get('users', function()
 {
 	$users = DB::table('skin_sales')->get();
@@ -75,16 +80,16 @@ Route::get('/header1', function(){
 		$latestEndDate->sub(new DateInterval("P3D"));
 		//echo "hello monday";
 	} elseif ($weekday=="Tuesday") {
-		$latestEndDate=new DateTime("now");
+		$latestEndDate->sub(new DateInterval("P1D"));
 		//echo "hello tuesday";
 	} elseif ($weekday=="Wednesday") {
-		$latestEndDate->sub(new DateInterval("P1D"));
+		$latestEndDate->sub(new DateInterval("P2D"));
 		//echo "hello Wednesday";
 	} elseif ($weekday=="Thursday") {
-		$latestEndDate->sub(new DateInterval("P2D"));
+		$latestEndDate->sub(new DateInterval("P3D"));
 		//echo "hello Thursday";
 	} elseif ($weekday=="Friday") {
-		$latestEndDate=new DateTime("now");
+		$latestEndDate->sub(new DateInterval("now"));
 		//echo "hello friday";
 	} elseif ($weekday=="Saturday") {
 		$latestEndDate->sub(new DateInterval("P1D"));
@@ -93,12 +98,8 @@ Route::get('/header1', function(){
 
 	$lastSaleEndDate = $latestEndDate->format("Y-m-d");
 
-	//echo $lastSaleEndDate." yolo";
-
 	if (Request::ajax()) {
 
-/*		$champ_sales = ChampSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "asc")->take(3)->get();
-		$skin_sales = SkinSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "asc")->take(3)->get();*/
 		$champ_sales = ChampSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
 		$skin_sales = SkinSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
 

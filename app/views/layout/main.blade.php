@@ -38,7 +38,7 @@
                 <footer>
                     <br>
                     <div class="col-md-8 col-md-offset-2">
-                        <p><small>Scrying Orb isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</small></p>
+                        <p><small class="fine-print">Scrying Orb isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</small></p>
                     </div>
                 </footer>
             </div>
@@ -50,6 +50,39 @@
         @yield('js')
         <script>
             $( document ).ready(function() {
+
+/*            var champName = [];
+            var skinName = [];
+            $.getJSON( '', function( data ) {
+
+                $.each(data.data, function(k,v){
+                    //console.log("key: "+k);
+                    //console.log(k)
+
+                    $.each(v, function(key, value){
+                        //console.log(key);
+                        if (key=="name") {
+                            //console.log(value); //retrieve names
+                            
+                            champName.push(value);
+                        };
+
+                        if (key=="skins") {
+                            //console.log(value);
+                            $.each(value, function(key2, value2){
+                                //console.log(value2.name);
+                                if (value2.name=="default") {
+
+                                }else{
+                                    skinName.push(value2.name);
+                                }
+                            });
+                        };
+                    });
+                });
+            });*/
+
+
 
                 var substringMatcher = function(strs) {
                   return function findMatches(q, cb) {
@@ -76,7 +109,9 @@
                 };
 
                 var champions = {{$championsArray}};
+                //var champions = champName;
                 var skins = {{$skinsArray}};
+                //var skins = skinName;
                  
                 $('#the-basics .typeahead').typeahead({
                     hint: true,

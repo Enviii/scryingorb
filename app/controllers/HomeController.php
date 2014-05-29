@@ -39,39 +39,50 @@ class HomeController extends BaseController {
 
 		$today = new DateTime("now");
 		$latestEndDate=new DateTime("now");
+		$latestStartDate=new DateTime("now");
 		$weekday=$today->format("l");
 		//echo $weekday;
 
 		if ($weekday=="Sunday") {
+			$latestStartDate->sub(new DateInterval("P2D"));
 			$latestEndDate->sub(new DateInterval("P2D"));
 			//echo "hello sunday";
 		} elseif ($weekday=="Monday") {
+			$latestStartDate->sub(new DateInterval("P3D"));
 			$latestEndDate->sub(new DateInterval("P3D"));
 			//echo "hello monday";
 		} elseif ($weekday=="Tuesday") {
-			$latestEndDate=new DateTime("now");
+			$latestStartDate=new DateTime("now");
+			$latestEndDate->sub(new DateInterval("P1D"));
 			//echo "hello tuesday";
 		} elseif ($weekday=="Wednesday") {
-			$latestEndDate->sub(new DateInterval("P1D"));
+			$latestStartDate->sub(new DateInterval("P1D"));
+			$latestEndDate->sub(new DateInterval("P2D"));
 			//echo "hello Wednesday";
 		} elseif ($weekday=="Thursday") {
-			$latestEndDate->sub(new DateInterval("P2D"));
+			$latestStartDate->sub(new DateInterval("P2D"));
+			$latestEndDate->sub(new DateInterval("P3D"));
 			//echo "hello Thursday";
 		} elseif ($weekday=="Friday") {
-			$latestEndDate=new DateTime("now");
+			$latestStartDate=new DateTime("now");
+			$latestEndDate->sub(new DateInterval("now"));
 			//echo "hello friday";
 		} elseif ($weekday=="Saturday") {
+			$latestStartDate->sub(new DateInterval("P1D"));
 			$latestEndDate->sub(new DateInterval("P1D"));
 			//echo "hello Saturday";
 		}
 
 		$lastSaleEndDate = $latestEndDate->format("Y-m-d");
+		$lastSaleStartDate = $latestStartDate->format("Y-m-d");
 
-		$champ_sales = ChampSales::where('start_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
-		$skin_sales = SkinSales::where('start_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
+		$champ_sales = ChampSales::where('start_date', '=', $lastSaleStartDate)->orderBy("sale_price", "desc")->take(3)->get();
+		$skin_sales = SkinSales::where('start_date', '=', $lastSaleStartDate)->orderBy("sale_price", "desc")->take(3)->get();
 
 		$old_champ_sale = ChampSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
 		$old_skin_sale = SkinSales::where('end_date', '=', $lastSaleEndDate)->orderBy("sale_price", "desc")->take(3)->get();
+
+		//echo $old_champ_sale;
 
 		/*$champ_sales = ChampSales::whereRaw('CURDATE() between start_date and end_date')->orderBy("sale_price", "asc")->take(3)->get();
 		$skin_sales = SkinSales::whereRaw('CURDATE() between start_date and end_date')->orderBy("sale_price", "asc")->take(3)->get();*/

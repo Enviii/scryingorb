@@ -2,7 +2,13 @@
 
 @section('content')
     <div class="container" id="buttonWell">
+
+	
+
+
+
 		<div id="headerButton" class="row">
+			
 
 @foreach($champ_sales as $champion)
 	<?php 
@@ -24,24 +30,55 @@
 	?>
 @endforeach
 
-			<div id="lastSale" class="col-sm-6 col-md-4"> 
-				<button id="headerButton1" class="btn btn-default btn-lg btn-block">Last Sale <small>({{ $old_startDate." to ".$old_endDate }})</small></button>
-			</div>
+<!-- 				<div id="lastSale" class="col-lg-6"> 
+	<button id="headerButton1" class="btn btn-default btn-lg btn-block">Last Sale <small>({{ $old_startDate." to ".$old_endDate }})</small></button>
+</div>
 
-			<div id="currentSale" class="col-sm-6 col-md-4">
-				<button id="headerButton2" class="btn btn-primary btn-lg btn-block">Current Sale <small>({{ $startDate." to ".$endDate }})</small></button>
-			</div>
-<?php
-				$today = new DateTime("now");
-				$today = $today->format("l");
-				if ($today=="Monday" || $today=="Thursday") { 
-?>
-					<div id="nextSale" class="col-sm-6 col-md-4">
-						<button id="headerButton3" class="btn btn-default btn-lg btn-block">Next Sale</button>
-					</div>
-<?php 			}
-?>
+<div id="currentSale" class="col-lg-6">
+	<button id="headerButton2" class="btn btn-primary btn-lg btn-block">Current Sale <small>({{ $startDate." to ".$endDate }})</small></button>
+</div>
+ -->
 
+<!-- <div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<ul class="nav nav-tabs nav-justified">
+				<li id="headerButton1"><a href="#">Last Sale <br><small>({{ $old_startDate." to ".$old_endDate }})</small></a></li>
+				<li id="headerButton2"><a href="#">Current Sale <br><small>({{ $startDate." to ".$endDate }})</small></a></li>
+				<li><a href="#">Next Sale <br><small>May 31 to Jun 2</small></a></li>
+			</ul>
+		</div>
+	</div>
+</div> -->
+
+<?php 	$today = new DateTime("now");
+		$today = $today->format("l"); ?>
+
+@if ($today=="Monday" || $today=="Thursday")
+			<div class="col-md-12">
+				<div id="lastSale" class="col-xs-4"> 
+					<button id="headerButton1" class="btn btn-default btn-block">Last Sale <br><small>({{ $old_startDate." to ".$old_endDate }})</small></button>
+				</div>
+
+				<div id="currentSale" class="col-xs-4">
+					<button id="headerButton2" class="btn btn-primary btn-block">Current Sale <br><small>({{ $startDate." to ".$endDate }})</small></button>
+				</div>
+
+				<div id="nextSale" class="col-xs-4">
+					<button id="headerButton3" class="btn btn-default btn-block">Next Sale <br><small>May 31 to Jun 2</small></button>
+				</div>
+			</div>
+@else
+			<div class="col-md-12">
+				<div id="lastSale" class="col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-2 col-xs-6"> 
+					<button id="headerButton1" class="btn btn-default btn-block">Last Sale <br><small>({{ $old_startDate." to ".$old_endDate }})</small></button>
+				</div>
+
+				<div id="currentSale" class="col-md-4 col-md-offset-2 col-sm-4 col-xs-6">
+					<button id="headerButton2" class="btn btn-primary btn-block">Current Sale <br><small>({{ $startDate." to ".$endDate }})</small></button>
+				</div>
+			</div>
+@endif
 		</div>
 	</div> <!-- end buttonWell container -->
 
@@ -55,6 +92,36 @@
 @section('js')
 	<script>
 		$( document ).ready(function() {
+			$("#headerButton2").addClass("active");
+
+/*			var champName = [];
+			$.getJSON( url, function( data ) {
+
+				$.each(data.data, function(k,v){
+					//console.log("key: "+k);
+					//console.log(k)
+
+					$.each(v, function(key, value){
+						//console.log(key);
+						if (key=="name") {
+							console.log(value); //retrieve names
+							
+							champName.push(value);
+						};
+
+						if (key=="skins") {
+							//console.log(value);
+							$.each(value, function(key2, value2){
+								//console.log(value2);
+							});
+						};
+					});
+				});
+			});*/
+
+			//champName.push("test");
+
+			
 
 			//hide next button if day meets condition
 /*			var weekday = new Date().getDay();
@@ -71,6 +138,9 @@
 				Last Button
 			*/
 			$("#headerButton1").click(function(e){
+				$("#headerButton2").removeClass("active");
+				$("#headerButton3").removeClass("active");
+				$("#headerButton1").addClass("active");
 				console.log("clicky1");
 				e.preventDefault();
 
@@ -85,6 +155,10 @@
 				Current Button
 			*/
 			$("#headerButton2").click(function(e){
+				$("#headerButton1").removeClass("active");
+				$("#headerButton3").removeClass("active");
+				$("#headerButton2").addClass("active");
+
 				console.log("clicky2");
 				e.preventDefault();
 

@@ -77,7 +77,7 @@
 
 								@if ($expected_sale<$today)
 									<td class="success text-center">
-										Soon
+										Soon<sup>TM</sup>
 								@else 
 									<td class="text-center">
 										{{$expected_sale_date}}

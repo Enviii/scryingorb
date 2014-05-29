@@ -8,14 +8,23 @@
 		$date_last_sale = new DateTime($champ->last_sale);
 		$today = new DateTime("now");
 
-		$interval = $date_last_sale->diff($today);
+		$date_last_sale = $date_last_sale->diff($today);
+
+		//echo $champ->status;
+
+		if ($champ->status==1) {
+			$champInterval = "Blacklisted (450 IP)";
+		} else {
+			$champInterval = $date_last_sale->format('%a days since sale');
+		}
+		$skinInterval = $date_last_sale->format('%a days since sale');
 
 		$skin_date_last_sale = new DateTime();
 	?>
-	<div class="container">
+	<div class="container" id="champHeader">
 		<div class="row">
 			<div class="page-header">
-				<h1>{{$champ->champion}} <small>{{$interval->format('%a days since sale')}}</small></h1>
+				<h1>{{$champ->champion}} <small>{{$champInterval}}</small></h1>
 			</div>
 		</div>
 	</div>
@@ -48,11 +57,11 @@
 
 				</ol>
 				<div class="carousel-inner">
-					<div class="item active">
+					<div class="item active">				
 						<img src="{{asset('img/all/'.clean($skin->champion).'_Splash_Classic.jpg');}}" alt="Champ">
 						<div class="carousel-caption">
-						<h2 class="text-success">{{$champ->champion}}</h2>
-						<p>{{$interval->format('%a days ago')}}</p>
+							<h2 class="text-success">{{$champ->champion}}</h2>
+							<p>{{$champInterval}}</p>
 						</div>
 					</div>
 
@@ -61,13 +70,15 @@
 	<?php
 		$skin_date_last_sale = new DateTime($skin->date_last_sale);
 		$skin_interval = $skin_date_last_sale->diff($today);
-
+		$skinName = str_replace(" ","",$skin->set);
 	?>
 					<div class="item">
-						<img src="{{asset('img/all/'.clean($skin->champion).'_Splash_'.str_replace(" ", "", $skin->set).'.jpg');}}" alt="Champ">
+						<a href="{{ URL::to('skin', $skin->skin) }}">
+							<img src="{{asset('img/all/'.clean($skin->champion).'_Splash_'.$skinName.'.jpg');}}" alt="Champ">
+						</a>
 						<div class="carousel-caption">
-						<h2 class="text-success">{{$skin->skin}}</h2>
-						<p>{{$skin_interval->format('%a days since sale')}}</p>
+							<h2 class="text-success">{{$skin->skin}}</h2>
+							<p>{{$skin_interval->format('%a days since sale')}}</p>
 						</div>
 					</div>
 	@endforeach
@@ -86,9 +97,11 @@
 		</div>
 	</div>
 
-	<br>
-	<hr>
-	<br>
+	<div class="container" id="hr">
+		<div class="row">
+			<hr>
+		</div>
+	</div>
 
 	<div class="container">
 		<div class="row">
@@ -110,7 +123,9 @@
 						<tbody>
 							@foreach($champ->skins as $skin)
 								<tr>
-									<td>{{$skin->skin}}</td>
+									<td>
+										<a href="{{ URL::to('skin', $skin->skin) }}">{{$skin->skin}}</a>
+									</td>
 									<td>{{$skin->rp}}</td>
 									<td>{{$skin->date_last_sale}}</td>
 								</tr>
