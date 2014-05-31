@@ -50,15 +50,15 @@ Route::get('/skinhistory', array(
 	'uses' => 'SkinHistoryController@showSkinHistory'
 ));
 
-Route::get('users', function()
-{
-	$users = DB::table('skin_sales')->get();
-	foreach ($users as $user)
-	{
-	     echo $user->skin."<br>";
-	}
-    return View::make('users');
-});
+Route::get('/rp/{rp}', array(
+	'as' => 'skinhistoryRP',
+	'uses' => 'SkinHistoryController@specificRP'
+));
+
+Route::get('/rp/all', array(
+	'as' => 'skinhistoryAll',
+	'uses' => 'SkinHistoryController@showSkinHistory'
+));
 
 Route::get('/header1', function(){
 	

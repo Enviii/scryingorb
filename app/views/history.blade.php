@@ -75,11 +75,6 @@
 
 								if ($champ->last_sale_2==null) {
 									$interval = $date_last_sale->diff($today);
-									//echo "<br>";
-									//echo $skin->id." date_last_sale ".$date_last_sale->format('Y-m-d')."<br>";
-
-									//is null, ignore this shit
-									//echo $skin->date_last_sale_2."<br>";
 
 									$expected_sale = $date_last_sale->add(new DateInterval('P'.$days.'D'));
 									if ($expected_sale<$today) {

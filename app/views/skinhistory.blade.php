@@ -12,12 +12,18 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<p class="text-center">
-				Fair warning guys, skin sale estimation dates are relatively vague. There {{$countSkin}} being sold at the moment. Only 3 go on sale in one sale. Sales are calculated by tier, so 975 RP skins take a lot longer to go on sale than 750 RP because the former has a lot more skins in its tier.
-			</p>
+		<div class="col-md-6 col-md-offset-3">
+			<ul class="nav nav-tabs nav-justified">
+					<li class="active" id="allSkin"><a href="#">All</a></li>
+				@foreach($rp_range as $rp)
+					<li id="{{$rp->rp}}"><a href="#">{{$rp->rp}}</a></li>
+				@endforeach
+			</ul>
 		</div>
-		
+	</div>
+</div>
+
+<br>
 
 <?php 
 	$count1820 = count($rp1820);
@@ -27,10 +33,18 @@
 	$count520 = count($rp520);
 	$count390 = count($rp390);
 
-	$today = new DateTime("now");
+	$today = new DateTime("today");
 	$day7 = new DateTime("7 days ago");
 	$day3 = new DateTime("4 days");
 ?>
+
+<div class="container" id="all">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<p class="text-center">
+				Fair warning guys, skin sale estimation dates are relatively vague. There {{$countSkin}} being sold at the moment. Only 3 go on sale in one sale. Sales are calculated by tier, so 975 RP skins take a lot longer to go on sale than 750 RP because the former has a lot more skins in its tier.
+			</p>
+		</div>
 
 @foreach($rp_range as $rp)
 
@@ -38,7 +52,12 @@
 
 			<div class="panel-default panel">
 				<div class="panel-heading">
-					<h3 class="panel-title text-center">{{$rp->rp}} RP
+					<h3 class="panel-title text-center">
+						@if ($rp->rp==1820)
+							{{$rp->rp}} &amp; 3250 RP
+						@else
+							{{$rp->rp}} RP
+						@endif
 						<!-- <span class="label label-primary"></span> -->
 					</h3>
 				</div>
@@ -89,16 +108,12 @@
 
 								if ($skin->date_last_sale_2==null) {
 									$interval = $date_last_sale->diff($today);
-									//echo "<br>";
-									//echo $skin->id." date_last_sale ".$date_last_sale->format('Y-m-d')."<br>";
-
-									//is null, ignore this shit
-									//echo $skin->date_last_sale_2."<br>";
 
 									$expected_sale = $date_last_sale->add(new DateInterval('P'.$days.'D'));
 									if ($expected_sale<$today) {
 										$soon=true;
-										
+									} else {
+										$soon=false;
 									}
 									$recently=false;
 									$onsale=false;
@@ -109,23 +124,17 @@
 
 									$date_last_sale_2 = new DateTime($skin->date_last_sale_2);
 									//on sale within the past 7 days
-									if ($date_last_sale_2 <= $today && $date_last_sale_2 >= $day7) {
+									if ($date_last_sale_2 < $today && $date_last_sale_2 >= $day7) {
 										$soon=false;
 										$recently=true;
 										$onsale=false;
 										$interval= $date_last_sale_2->diff($today);
-										//echo $skin->skin." ".$skin->date_last_sale_2."<br>";
-
-										//echo "3 days later: ".$day3->format("Y-m-d")."<br>";
-										//echo "7 day: ".$day7->format("Y-m-d");
 
 									} elseif ($date_last_sale_2 <= $day3 && $date_last_sale_2 >= $today) {
 										$onsale=true;
 										$soon=false;
 										$recently=false;
 										$interval= $date_last_sale_2->diff($today);
-
-										//echo $skin->skin." ".$skin->date_last_sale_2."<br>";
 									}
 
 								}
@@ -170,15 +179,6 @@
 								</td>
 
 							</tr>
-
-
-
-
-
-
-
-
-
 					@endforeach
 
 					</tbody>
@@ -191,4 +191,56 @@
 	</div>
 </div>
 
+<div class="container">
+	<div class="row">
+		<div id="specificRP"></div>
+	</div>
+</div>
+
+@stop
+
+@section('js')
+	<script>
+		$( document ).ready(function() {
+
+			@foreach($rp_range as $rp)
+
+				$("#{{$rp->rp}}").click(function(e){
+					console.log("clicky2");
+					e.preventDefault();
+
+					$.get('/rp/{{$rp->rp}}', function(data){
+
+						$("li").each(function(index){
+							$(this).removeClass('active');
+						});
+
+						$("#{{$rp->rp}}").addClass('active');
+						$("#all").remove();
+						$("#specificRP").html(data);
+					});
+				});
+
+			@endforeach
+
+			$("#allSkin").click(function(e){
+				console.log("clicky2");
+				e.preventDefault();
+
+				window.location.href="{{ URL::route('skinhistory') }}";
+
+				/*$.get('/rp/all', function(data){
+
+					$("li").each(function(index){
+						$(this).removeClass('active');
+					});
+
+					$("#allSkin").addClass('active');
+					console.log(data);
+					//$("#specificRP").html(data);
+				});*/
+			});
+
+		});
+	</script>
 @stop
