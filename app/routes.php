@@ -89,7 +89,7 @@ Route::get('/header1', function(){
 		$latestEndDate->sub(new DateInterval("P3D"));
 		//echo "hello Thursday";
 	} elseif ($weekday=="Friday") {
-		$latestEndDate->sub(new DateInterval("now"));
+		$latestEndDate = new DateTime("now");
 		//echo "hello friday";
 	} elseif ($weekday=="Saturday") {
 		$latestEndDate->sub(new DateInterval("P1D"));

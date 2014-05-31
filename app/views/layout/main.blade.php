@@ -141,6 +141,46 @@
                         window.location=urlTo;
                     }
                 });
+
+                $('.typeahead').bind('typeahead:autocompleted', function(obj, datum, name) {
+                    if (name=="skin") {
+                        urlTo = "{{ URL::to('skin', 'here') }}";
+                        urlTo = urlTo.replace('here', datum.value);
+
+                        window.location=urlTo;
+                    } else {
+                        urlTo = "{{ URL::to('champion', 'here') }}";
+                        urlTo = urlTo.replace('here', datum.value);
+
+                        window.location=urlTo;
+                    }
+                });
+
+                $('.typeahead').bind('typeahead:opened', function(obj, datum, name) {
+                    $(this).keypress(function(e) {
+                        if(e.which == 13) {
+                            //console.log($("input#type1").val());
+                            var value = $("input#type1").val();
+
+                            if (value.indexOf(" ")<=1) {
+                                //console.log("if "+value+" "+value.indexOf(" "));
+                                urlTo = "{{ URL::to('champion', 'here') }}";
+                                urlTo = urlTo.replace('here', $("input#type1").val());
+                            } else if (value.indexOf(".")>=1) {
+                                //console.log("mundo "+value+" "+value.indexOf("."));
+                                urlTo = "{{ URL::to('champion', 'here') }}";
+                                urlTo = urlTo.replace('here', $("input#type1").val());
+                            } else {
+                                //console.log("else "+value+" "+value.indexOf("."));
+                                urlTo = "{{ URL::to('skin', 'here') }}";
+                                urlTo = urlTo.replace('here', $("input#type1").val());
+                            }
+                            
+                            window.location=urlTo;
+                        }
+                    });
+                });
+
             });
         </script>
 	</body>

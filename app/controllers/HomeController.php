@@ -65,7 +65,7 @@ class HomeController extends BaseController {
 			//echo "hello Thursday";
 		} elseif ($weekday=="Friday") {
 			$latestStartDate=new DateTime("now");
-			$latestEndDate->sub(new DateInterval("now"));
+			$latestEndDate=new DateTime("now");
 			//echo "hello friday";
 		} elseif ($weekday=="Saturday") {
 			$latestStartDate->sub(new DateInterval("P1D"));

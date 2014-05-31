@@ -20,11 +20,29 @@
 		$skinInterval = $date_last_sale->format('%a days since sale');
 
 		$skin_date_last_sale = new DateTime();
+
+								//$date_last_sale = new DateTime($champ->last_sale);
+								//$today = new DateTime("now");
+								//echo $countIP;
+								$formula = $countIP*(365/$countChamp);
+								$days = round($formula);
+
+								//calculate predicted sale date
+								$date_last_sale = new DateTime($champ->last_sale);
+								$expected_sale = $date_last_sale->add(new DateInterval('P'.$days.'D'));
+								$expected_sale_date = $expected_sale->format("M d \'y");
 	?>
 	<div class="container" id="champHeader">
 		<div class="row">
 			<div class="page-header">
 				<h1>{{$champ->champion}} <small>{{$champInterval}}</small></h1>
+				<h4>Expected Sale Date: 
+					@if ($expected_sale<$today)
+						<small>Soon<sup>TM</sup></small>
+					@else
+						<small>{{$expected_sale_date}}</small>
+					@endif
+				</h4>
 			</div>
 		</div>
 	</div>

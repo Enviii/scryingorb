@@ -3,6 +3,20 @@
 /* ==========================================================================
    My custom styles
    ========================================================================== */
+@media (max-width: 480px) {
+    .col-xs-4, .col-sm-4, .col-md-4 {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}
+
+@media (max-width: 767px) {
+    .col-md-4, .col-md-4, .col-md-4 {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}
+
 
 span.champ{
     color: orange;

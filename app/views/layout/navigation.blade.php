@@ -11,7 +11,7 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="{{ URL::route('home') }}">Home</a></li>
+				<li class="hidden-xs hidden-sm"><a href="{{ URL::route('home') }}">Home</a></li>
 				<!-- <li><a href="{{ URL::route('skin') }}">Skins</a></li> -->
 				<li><a href="{{ URL::route('champion') }}">Champions</a></li>
 				<li><a href="{{ URL::route('history') }}">Champion Predictions</a></li>
@@ -19,7 +19,8 @@
 				<!-- <li><a href="#predictionhistory">Prediction History</a></li> -->
 			</ul>
 			<form class="navbar-form navbar-right" id="the-basics">
-				<input type="text" class="form-control col-lg-8 typeahead" placeholder="Champs/Skins">
+				<input type="text" class="form-control col-lg-8 typeahead" id="type1" placeholder="Champs/Skins">
+
 			</form>
 		</div><!--/.navbar-collapse -->
 	</div>

@@ -398,3 +398,6 @@ Stack trace:
 [28-May-2014 21:39:41 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/a1ad4819b59c9046a4d7d9886dc20be8 on line 95
 [28-May-2014 21:46:21 America/New_York] PHP Parse error:  syntax error, unexpected '.' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/a1ad4819b59c9046a4d7d9886dc20be8 on line 88
 [28-May-2014 21:52:13 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting variable (T_VARIABLE) or '$' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/a1ad4819b59c9046a4d7d9886dc20be8 on line 106
+[30-May-2014 15:20:59 America/New_York] PHP Fatal error:  Call to undefined method DateInterval::add() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 27
+[30-May-2014 15:21:34 America/New_York] PHP Fatal error:  Call to undefined method DateInterval::add() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 27
+[30-May-2014 19:22:48 America/New_York] PHP Fatal error:  Call to a member function diff() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 99

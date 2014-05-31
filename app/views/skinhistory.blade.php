@@ -150,7 +150,6 @@
 								@if ($skin->status==2)
 									<td class="info text-center">
 										Blacklisted
-
 								@elseif ($soon==true)
 
 									<td class="success text-center">
