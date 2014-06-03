@@ -56,9 +56,9 @@
 										<strong>{{$skin->skin}}</strong>
 									</h4>
 								</a>
-								<p><span class="text-info">Last Sale:</span><br> {{$skin->skinBelongsTo->date_last_sale}}
+								<p><span class="text-info">Last Sale:</span><br> {{$skin->skinBelongsTo->last_sale}}
 <?php
-									$subDays = new DateTime($skin->skinBelongsTo->date_last_sale);
+									$subDays = new DateTime($skin->skinBelongsTo->last_sale);
 									$today = new DateTime("now");
 									
 									$interval = $subDays->diff($today);

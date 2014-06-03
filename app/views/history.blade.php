@@ -17,7 +17,7 @@
 
 	$today = new DateTime("today");
 	$day7 = new DateTime("7 days ago");
-	$day3 = new DateTime("4 days");
+	$day3 = new DateTime("3 days ago");
 	$divCount=2; 
 
 	/*echo "day 7 is ".$day7->format("m-d");
@@ -50,73 +50,70 @@
 					<tbody>
 						@foreach(${"ip".$ip->ip} as $champ)
 							<?php 
-								/*Calculate passed days and estimated sale dates*/
+								$interval=null;
+								$onSaleNow=null;
+								$onNextSale=null;
+								$soon=null;
+								$justPassed=null;
 
-								$date_last_sale = new DateTime($champ->last_sale);
-
-								$test2 = new DateTime($champ->last_sale_2);
-/*								if ($test2 == $today ) {
-									echo " is today <br>";
+								/*Check if date column is null before assigning DateTime obj*/
+								if ($champ->last_sale==null) {
+									$last_sale=null;
 								} else {
-									echo " is not today <br>";
-								}*/
-								//echo ${"count".$ip->ip};
+									$last_sale = new DateTime($champ->last_sale);
+								}
 
-								//prediction formula
-								$formula = ${"count".$ip->ip}*(365/$countChamp);
-								$days = round($formula);
+								if ($champ->sale_start_date==null) {
+									$sale_start_date=null;
+								} else {
+									$sale_start_date = new DateTime($champ->sale_start_date);
+									$sale_start_date_format = $sale_start_date->format("Y-m-d");
+								}
 
-								//calculate predicted sale date
-								/*$expected_sale = $date_last_sale->add(new DateInterval('P'.$days.'D'));
-								$expected_sale_date = $expected_sale->format("M d");*/
+								if ($champ->sale_end_date==null) {
+									$sale_end_date=null;
+								} else {
+									$sale_end_date = new DateTime($champ->sale_end_date);
+									$sale_end_date_format = $sale_end_date->format("Y-m-d");
+								}
+								
 
-								//$intervalExpected = $expected_sale->diff($today);
-								//$intervalExpected->format('%a')
+								/*calculate days since the sale ended*/
+								//check if sale_start_date OR sale_end_date is null
+								if ($sale_start_date==null || $sale_end_date==null) {
+									//use last_sale for days past
+									$interval = $last_sale->diff($today);
+									$interval = $interval->format('%a days');
 
-								if ($champ->last_sale_2==null) {
-									$interval = $date_last_sale->diff($today);
+									//prediction formula
+									$formula = ${"count".$ip->ip}*(365/$countChamp);
+									$days = round($formula);
 
-									$expected_sale = $date_last_sale->add(new DateInterval('P'.$days.'D'));
-									if ($expected_sale<$today) {
-										$soon=true;
+									//calculate estimated date:
+									$expected_sale_date = $last_sale->add(new DateInterval('P'.$days.'D'));
+
+									if ($expected_sale_date<=$today) {
+										$soon = true;
 									} else {
-										$soon=false;
+										$expected_sale_date_format = $expected_sale_date->format("M d \'y");
 									}
-									$recently=false;
-									$onsale=false;
 
-									$expected_sale_date = $expected_sale->format("M d \'y");
-
+								} elseif ($sale_start_date<=$today && $sale_end_date>=$today) {
+									//if today is between start and end date
+									$onSaleNow=true;
+									$interval = $sale_start_date->diff($today);
+									$interval = $interval->format('%a days');
+								} elseif ($sale_start_date>$today) {
+									$onNextSale=true;
+									$interval = $last_sale->diff($today);
+									$interval = $interval->format('%a days');
+								} elseif ($sale_end_date > $day3) {
+									$justPassed=true;
+									$interval = $last_sale->diff($today);
+									$interval = $interval->format('%a days');
 								} else {
-
-									$date_last_sale_2 = new DateTime($champ->last_sale_2);
-
-
-/*								if ($date_last_sale_2 >= $day7) {
-									echo $champ->champion." is today <br>";
-								} else {
-									echo $champ->champion." is not today <br>";
-								}*/
-
-									//on sale within the past 7 days. g>
-									if ($date_last_sale_2 < $today && $date_last_sale_2 >= $day7) {
-										$soon=false;
-										$recently=true;
-										$onsale=false;
-										$interval= $date_last_sale_2->diff($today);
-										//echo $skin->skin." ".$skin->date_last_sale_2."<br>";
-
-										//echo "3 days later: ".$day3->format("Y-m-d")."<br>";
-										//echo "7 day: ".$day7->format("Y-m-d");
-
-									} elseif ($date_last_sale_2 <= $day3 && $date_last_sale_2 >= $today) {
-										$onsale=true;
-										$soon=false;
-										$recently=false;
-										$interval= $date_last_sale_2->diff($today);
-
-										//echo $skin->skin." ".$skin->date_last_sale_2."<br>";
-									}
+									$interval = $last_sale->diff($today);
+									$interval = $interval->format('%a days');
 								}
 							?>
 							<!-- http://gameinfo.na.leagueoflegends.com/en/game-info/champions/{{ clean($champ->champion)}} -->
@@ -125,22 +122,43 @@
 								<td>
 									<a href="{{ URL::to('champion', $champ->champion) }}">
 										<span class="champ">{{$champ->champion}}</span>
+										
+										<a href="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/{{ cleanandlower($champ->champion)}}">
+											<span class="super-small"> riot</span>
+										</a>
+
+										<span class="super-small"> &#8226; </span>
+										
+										<a href="http://leagueoflegends.wikia.com/wiki/{{ clean($champ->champion)}}">
+											<span class="super-small"> wikia</span>
+										</a>
+
 									</a>
 								</td>
 
-								<td class="text-center">{{$interval->format('%a')}}</td>
-									@if ($champ->status==1 || $champ->status==2)
-										<td class="info text-center">Blacklisted
-									@elseif ($soon==true)
-										<td class="success text-center">Soon<sup>TM</sup>
-									@elseif ($recently==true)
-										<td class="warning text-center">Just Passed
-									@elseif ($onsale==true)
-										<td class="danger text-center">Right Now!
-									@else 
-										<td class="text-center">{{$expected_sale_date}}
-									@endif
-								</td>
+								<td class="text-center">{{{ $interval }}}</td>
+
+								@if (isset($onSaleNow) && $onSaleNow==true)
+									<td class="danger text-center">
+										Right Now!
+									</td>
+								@elseif (isset($onNextSale) && $onNextSale==true)
+									<td class="success text-center">
+										Next Sale
+									</td>
+								@elseif (isset($soon) && $soon==true)
+									<td class="info text-center">
+										Soon<sup>TM</sup>
+									</td>
+								@elseif (isset($justPassed) && $justPassed==true)
+									<td class="warning text-center">
+										Just Passed
+									</td>
+								@else 
+									<td class="text-center">
+										{{$expected_sale_date_format}}
+									</td>
+								@endif
 
 							</tr>
 

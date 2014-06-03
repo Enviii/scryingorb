@@ -518,3 +518,40 @@ Stack trace:
 [31-May-2014 15:04:01 America/New_York] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/2736f29ebe38e685e3c7631d214cf98e on line 15
 [31-May-2014 15:04:49 America/New_York] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/2736f29ebe38e685e3c7631d214cf98e on line 15
 [31-May-2014 15:04:50 America/New_York] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/2736f29ebe38e685e3c7631d214cf98e on line 15
+[02-Jun-2014 22:40:46 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: interval' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15:72
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15(72): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 72, Array)
+#1 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9496): include('/home/dkarkar/p...')
+#2 /home/dkarkar/public_html/laravel/lolsales/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/dkarkar/p...', Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9374): Illuminate\View\Engines\CompilerEngine->get('/home/dkarkar/p...', Array)
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9361): Illuminate\View\View->getContents()
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compil in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 72
+[02-Jun-2014 22:40:46 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 72
+[02-Jun-2014 22:41:05 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: interval' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15:72
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15(72): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 72, Array)
+#1 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9496): include('/home/dkarkar/p...')
+#2 /home/dkarkar/public_html/laravel/lolsales/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/dkarkar/p...', Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9374): Illuminate\View\Engines\CompilerEngine->get('/home/dkarkar/p...', Array)
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9361): Illuminate\View\View->getContents()
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compil in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 72
+[02-Jun-2014 22:41:05 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 72
+[02-Jun-2014 22:41:07 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: interval' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15:72
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15(72): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 72, Array)
+#1 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9496): include('/home/dkarkar/p...')
+#2 /home/dkarkar/public_html/laravel/lolsales/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/dkarkar/p...', Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9374): Illuminate\View\Engines\CompilerEngine->get('/home/dkarkar/p...', Array)
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9361): Illuminate\View\View->getContents()
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compil in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 72
+[02-Jun-2014 22:41:07 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 72
+[02-Jun-2014 22:46:55 America/New_York] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: interval' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15:82
+Stack trace:
+#0 /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15(82): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/dkarkar/p...', 82, Array)
+#1 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9496): include('/home/dkarkar/p...')
+#2 /home/dkarkar/public_html/laravel/lolsales/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/dkarkar/p...', Array)
+#3 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9374): Illuminate\View\Engines\CompilerEngine->get('/home/dkarkar/p...', Array)
+#4 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compiled.php(9361): Illuminate\View\View->getContents()
+#5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compil in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 82
+[02-Jun-2014 22:46:55 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 82
+[03-Jun-2014 00:24:49 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 111

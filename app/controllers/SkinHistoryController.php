@@ -8,12 +8,15 @@ class SkinHistoryController extends BaseController {
 		$countSkin = Skin::all();
 		$countSkin = count($countSkin);
 
-		$rp1820 = Skin::where('rp', '=', '1820')->orderBy("date_last_sale", "asc")->get();
-		$rp1350 = Skin::where('rp', '=', '1350')->orderBy("date_last_sale", "asc")->get();
-		$rp975 = Skin::where('rp', '=', '975')->orderBy("date_last_sale", "asc")->get();
-		$rp750 = Skin::where('rp', '=', '750')->orderBy("date_last_sale", "asc")->get();
-		$rp520 = Skin::where('rp', '=', '520')->orderBy("date_last_sale", "asc")->get();
-		$rp390 = Skin::where('rp', '=', '390')->orderBy("date_last_sale", "asc")->get();
+		$rp1820 = Skin::where('rp', '=', '1820')->orderBy("last_sale", "asc")->get();
+		$rp1350 = Skin::where('rp', '=', '1350')->orderBy("last_sale", "asc")->get();
+		$rp975 = Skin::where('rp', '=', '975')->orderBy("last_sale", "asc")->get();
+		$rp750 = Skin::where('rp', '=', '750')->orderBy("last_sale", "asc")->get();
+		$rp520 = Skin::where('rp', '=', '520')->orderBy("last_sale", "asc")->get();
+		$rp390 = Skin::where('rp', '=', '390')->orderBy("last_sale", "asc")->get();
+
+		//echo $rp1820;
+		//echo $distinctRP;
 
 		$skins = Skin::all();
 
@@ -32,7 +35,7 @@ class SkinHistoryController extends BaseController {
 
 		if (Request::ajax()) {
 
-			$rpSpecific = Skin::where('rp', '=', $rp)->orderBy("date_last_sale", "asc")->get();
+			$rpSpecific = Skin::where('rp', '=', $rp)->orderBy("last_sale", "asc")->get();
 			$countSkin = Skin::count();
 			//$countSkin = count($countSkin);
 

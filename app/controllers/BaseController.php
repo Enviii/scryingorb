@@ -12,6 +12,12 @@ class BaseController extends Controller {
 		   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 		}
 
+		function cleanandlower($string) {
+		   $string = str_replace(' ', '', $string); // Replaces all spaces with hyphens.
+		   $string = strtolower($string);
+		   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+		}
+
 		//$champList = "https://prod.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image,skins&api_key=017c21e9-1bf7-46ab-aa0c-791c138ebcf1";
 		//$champListContent = file_get_contents("https://prod.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image,skins&api_key=017c21e9-1bf7-46ab-aa0c-791c138ebcf1");
 		//date_default_timezone_set('America/New_York');

@@ -17,6 +17,9 @@
     }
 }
 
+span.super-small{
+    font-size: 70%;
+}
 
 span.champ{
     color: orange;
