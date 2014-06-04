@@ -555,3 +555,6 @@ Stack trace:
 #5 /home/dkarkar/public_html/laravel/lolsales/bootstrap/compil in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 82
 [02-Jun-2014 22:46:55 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 82
 [03-Jun-2014 00:24:49 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 111
+[03-Jun-2014 20:05:19 America/New_York] PHP Fatal error:  Call to undefined function saleDate() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/c74866e90ad10c15063b8ae2e2920d15 on line 52
+[03-Jun-2014 20:43:24 America/New_York] PHP Fatal error:  Call to undefined function saleDate() in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 11
+[03-Jun-2014 20:47:08 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/dkarkar/public_html/laravel/lolsales/app/storage/views/52bdb19d3eff99d43bcff730d6fb329e on line 14
